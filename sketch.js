@@ -18,10 +18,9 @@ var start = function(x, y, ev) {
         this.data('oy', x.changedTouches[0].clientY);
     }
     this.data('origTransform', this.transform().local);
-}
+};
 
-var stop = function() {}
-
+var stop = function() {};
 
 window.onload = function() {
     var height = window.innerHeight,
