@@ -36,26 +36,29 @@
     input {
         position: fixed;
         top: 0px;
-        border: 1px dotted #ccc;
+        border: 0px solid #ccc;
         background: white;
         font-family: monospace;
-        padding: 10px 20px;
+        padding: 7px 10px;
         font-size: 18px;
         margin: 20px 10px 20px 0;
-        color: red;
+        /*color: black;*/
+        color: #38A56F;
         z-index: 50;
+        font-family: "Source Code Pro";
     }
     input:focus {
-        background-color: yellow;
+        /*background-color: yellow;*/
         outline: none;
     }
+
     #submit {
         left: 20px;
-        top: 60px;
+        top: 50px;
     }
     #save-svg {
-        left: 220px;
-        top: 60px;
+        left: 205px;
+        top: 50px;
     }
     #word {
         left: 20px;
@@ -70,6 +73,7 @@
     <!-- <script src="https://d3js.org/d3-selection.v1.min.js"></script> -->
     <!-- <script src="https://d3js.org/d3-drag.v1.min.js"></script> -->
     <script src="sketch3.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -80,7 +84,7 @@
         <input autocomplete="false" name="hidden" type="text" style="display:none;">
         <input type="text" id="word" placeholder="Écrivez un mot &hellip;" spellcheck="false">
         <input name="Submit" id="submit" type="submit" value="Ajouter un mot">
-        <input name="Submit" id="save-svg" type="submit" value="Télécharger en .SVG">
+        <input name="Submit" id="save-svg" type="button" value="Télécharger en .SVG">
     </form>
     <!-- <svg id="maboite" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" onload="makeDraggable(evt)"> -->
     <!-- <svg id="maboite" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"> -->
