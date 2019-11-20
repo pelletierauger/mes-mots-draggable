@@ -1,3 +1,28 @@
+var move = function(dx, dy, x, y) {
+    var clientX, clientY;
+    if ((typeof dx == 'object') && (dx.type == 'touchmove')) {
+        clientX = dx.changedTouches[0].clientX;
+        clientY = dx.changedTouches[0].clientY;
+        dx = clientX - this.data('ox');
+        dy = clientY - this.data('oy');
+    }
+    this.attr({
+        transform: this.data('origTransform') + (this.data('origTransform') ? "T" : "t") + [dx, dy]
+    });
+}
+
+var start = function(x, y, ev) {
+    if ((typeof x == 'object') && (x.type == 'touchstart')) {
+        x.preventDefault();
+        this.data('ox', x.changedTouches[0].clientX);
+        this.data('oy', x.changedTouches[0].clientY);
+    }
+    this.data('origTransform', this.transform().local);
+}
+
+var stop = function() {}
+
+
 window.onload = function() {
     var height = window.innerHeight,
         width = window.innerWidth;
@@ -9,7 +34,7 @@ window.onload = function() {
         strokeWidth: 0
     });
     var bigCircle = s.circle(200, 10, 40);
-    bigCircle.addClass("draggable");
+    // bigCircle.addClass("draggable");
     var bigCircle2 = s.circle(60, 40, 40);
     bigCircle2.attr({
         fill: "#CB232E",
@@ -18,7 +43,9 @@ window.onload = function() {
     });
     var t1 = s.text(60, 40, "Snap");
     var groupe = s.group(bigCircle2, t1);
-    groupe.addClass("draggable-group");
+    // groupe.addClass("draggable-group");
+    bigCircle.drag(move, start, stop);
+    groupe.drag(move, start, stop);
 }
 
 
