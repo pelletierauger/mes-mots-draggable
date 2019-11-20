@@ -153,8 +153,8 @@ window.onload = function() {
     // console.log(form);
 
     function handleForm(event) {
-        console.log(event);
-        console.log(document.getElementById("word").value);
+        // console.log(event);
+        // console.log(document.getElementById("word").value);
         var wo = document.getElementById("word").value;
         updateData(wo);
         event.preventDefault();
