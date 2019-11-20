@@ -182,7 +182,7 @@ window.onload = function() {
     }
 
     function dragWordstarted() {
-        this.parentNode.appendChild(this);
+        // this.parentNode.appendChild(this);
     }
 
     function dragged(d) {
